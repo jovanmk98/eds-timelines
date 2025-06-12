@@ -67,7 +67,7 @@ export function decorateMain(main) {
   decorateBlocks(main);
   console.log('Decorating main...', main);
     main.querySelectorAll('div.default-content-wrapper').forEach(wrapper => {
- console.log('Decorating wrapper...', wrapper);
+ console.log('Decorating wrapper.123..', wrapper);
     if (wrapper.querySelector('h1#timeline-of-html')) {
       console.log('Found timeline wrapper');
       // wrapper.parentElement is the <div> inside the section
