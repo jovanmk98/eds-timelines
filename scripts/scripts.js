@@ -65,19 +65,6 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
-  console.log('Decorating main...', main);
-    main.querySelectorAll('div.default-content-wrapper').forEach(wrapper => {
- console.log('Decorating wrapper.12333..', wrapper);
- wrapper.classList.add('timeline', 'block');
-    if (wrapper.querySelector('h1#timeline-of-html')) {
-      console.log('Found timeline wrapper');
-      // wrapper.parentElement is the <div> inside the section
-      console.log("TETSS");
-            console.log("PARENTTT ", wrapper.parentElement);
-      wrapper.parentElement.classList.add('timeline');
-
-    }
-  });
 }
 
 /**
