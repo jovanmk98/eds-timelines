@@ -71,6 +71,8 @@ export function decorateMain(main) {
 
   const titleP = wrapper.querySelector('p');
   if (titleP && titleP.textContent.trim() === 'Timeline of HTML') {
+
+    console.log('Found timeline wrapper123123123');
 wrapper.classList.remove('default-content-wrapper');
 wrapper.classList.add('timeline', 'block', 'default-content-wrapper');
     console.log('Found and tagged timeline wrapper');
