@@ -65,6 +65,18 @@ export function decorateMain(main) {
   buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
+  
+
+  main.querySelectorAll('div.default-content-wrapper').forEach(wrapper => {
+
+  const titleP = wrapper.querySelector('p');
+  if (titleP && titleP.textContent.trim() === 'Timeline of HTML') {
+
+    wrapper.classList.add('timeline', 'block');
+    console.log('Found and tagged timeline wrapper');
+  }
+});
+
 }
 
 /**
