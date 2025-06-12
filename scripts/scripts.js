@@ -72,6 +72,7 @@ export function decorateMain(main) {
       console.log('Found timeline wrapper');
       // wrapper.parentElement is the <div> inside the section
       wrapper.parentElement.classList.add('timeline');
+      console.log("wrapper.parentElement.classList ", wrapper.parentElement);
     }
   });
 }
