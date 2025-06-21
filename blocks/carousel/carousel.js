@@ -1,4 +1,3 @@
-export default async function decorate(block) {
-    console.log('Carousel block is not implemented yet.');
-
+export default function decorate(block) {
+  console.log('Carousel block detected');
 }
