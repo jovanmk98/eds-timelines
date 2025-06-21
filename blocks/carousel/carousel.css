@@ -51,11 +51,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-}
-
-.slider__image {
-    font-size: 2.7rem;
-    color: #2196F3;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .slider__caption {
@@ -68,6 +66,7 @@
 
 .slider__txt {
     max-width: 600px;
+    margin-bottom: 1rem;
 }
 
 .slider__link {

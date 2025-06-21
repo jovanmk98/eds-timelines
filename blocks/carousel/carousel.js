@@ -1,15 +1,9 @@
 export default function decorate(block) {
   block.classList.add('slider');
-  console.log('decorate carousel', block);
-
-  if (!block.id) {
-    block.id = 'slider-' + Math.random().toString(36).substr(2, 8);
-  }
+  if (!block.id) block.id = 'slider-' + Math.random().toString(36).substr(2, 8);
   const scope = `#${block.id}`;
-
   const slides = Array.from(block.querySelectorAll(':scope > div'));
   if (slides.length === 0) return;
-
   block.innerHTML = '';
 
   slides.forEach((_, i) => {
@@ -25,9 +19,7 @@ export default function decorate(block) {
   const style = document.createElement('style');
   const totalPct = slides.length * 100;
   let css = `
-${scope} .slider__inner {
-  width: ${totalPct}%;
-}
+${scope} .slider__inner { width: ${totalPct}%; }
 `;
   slides.forEach((_, i) => {
     css += `
@@ -50,16 +42,19 @@ ${scope} .slider__nav:checked:nth-of-type(${i + 1}) ~ .slider__inner {
 
     const slug = titleEl && titleEl.id
       ? titleEl.id
-      : (titleEl
+      : titleEl
         ? titleEl.textContent.trim().toLowerCase().replace(/\s+/g, '-')
-        : '');
+        : '';
 
     const contents = document.createElement('div');
     contents.className = 'slider__contents';
 
     if (picEl) {
-      const imgWrap = picEl.cloneNode(true);
-      imgWrap.classList.add('slider__image');
+      const img = picEl.tagName === 'PICTURE'
+        ? picEl.querySelector('img')
+        : picEl;
+      const src = img.getAttribute('src');
+      contents.style.backgroundImage = `url('${src}')`;
     }
 
     const caption = document.createElement('h2');
