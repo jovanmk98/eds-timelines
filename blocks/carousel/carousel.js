@@ -14,10 +14,10 @@ export default function decorate(block) {
 
   slides.forEach((_, i) => {
     const nav = document.createElement('input');
-    nav.type      = 'radio';
-    nav.name      = 'slider';
+    nav.type = 'radio';
+    nav.name = 'slider';
     nav.className = 'slider__nav';
-    nav.title     = `slide${i + 1}`;
+    nav.title = `slide${i + 1}`;
     if (i === 0) nav.checked = true;
     block.appendChild(nav);
   });
@@ -44,15 +44,15 @@ ${scope} .slider__nav:checked:nth-of-type(${i + 1}) ~ .slider__inner {
 
   slides.forEach(slide => {
     const titleEl = slide.querySelector('h1');
-    const bodyEl  = slide.querySelector('p:not(.button-container)');
-    const picEl   = slide.querySelector('picture') || slide.querySelector('img');
-    const linkEl  = slide.querySelector('a');
+    const bodyEl = slide.querySelector('p:not(.button-container)');
+    const picEl = slide.querySelector('picture') || slide.querySelector('img');
+    const linkEl = slide.querySelector('a');
 
     const slug = titleEl && titleEl.id
       ? titleEl.id
       : (titleEl
-         ? titleEl.textContent.trim().toLowerCase().replace(/\s+/g, '-')
-         : '');
+        ? titleEl.textContent.trim().toLowerCase().replace(/\s+/g, '-')
+        : '');
 
     const contents = document.createElement('div');
     contents.className = 'slider__contents';
@@ -77,8 +77,8 @@ ${scope} .slider__nav:checked:nth-of-type(${i + 1}) ~ .slider__inner {
     contents.appendChild(txt);
 
     if (linkEl) {
-      const linkClone = linkEl.cloneNode(true);
-      contents.appendChild(linkClone);
+      linkEl.className = 'slider__link';
+      contents.appendChild(linkEl);
     }
 
     track.appendChild(contents);
